@@ -13,13 +13,13 @@ public class TestaPais {
 	public static void main(String[] args) throws SQLException {
 		try (Connection con = new ConnectionPoolOracle().getConnection()) {
 			PaisDAO paisDAO = new PaisDAO(con);
-			//paisDAO.insert("Chile");
-			//paisDAO.update(22, "Chile");
-			//paisDAO.delete(22);
+			// paisDAO.inserir("Chile");
+			// paisDAO.alterar(6, "Argentina");
+			paisDAO.excluir(6);
 			List<Pais> paises = paisDAO.lista();
-            for(Pais pais : paises) {
-                System.out.println(pais.getNome());
-            }
+			for (Pais pais : paises) {
+				System.out.println(pais.getNome());
+			}
 		}
 	}
 
